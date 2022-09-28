@@ -26,6 +26,8 @@ public class FxSpringAppBudgetBroApplication extends Application {
                 .run(args);
     }
 
+
+
     @Override
     public void start(Stage stage) throws IOException {
 
