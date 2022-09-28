@@ -39,6 +39,9 @@ public class MainUicontroller implements Initializable {
     private Button ADDBTN;
 
     @FXML
+    private Button ADDBTN1;
+
+    @FXML
     private Button BT3;
 
     @FXML
@@ -54,11 +57,25 @@ public class MainUicontroller implements Initializable {
     private Label LB1;
 
     @FXML
+    private Label LB11;
+
+    @FXML
     private Label LB2;
+
+    @FXML
+    private Label LB21;
+
     @FXML
     private Label LB3err;
+
     @FXML
     private TextField PRICE;
+
+    @FXML
+    private TextField UPITEM;
+
+    @FXML
+    private TextField UPRICE;
 
 
     @FXML
@@ -78,9 +95,7 @@ public class MainUicontroller implements Initializable {
             e.printStackTrace();
         }
 
-
     }
-
 
     @FXML
     void addItem(ActionEvent event) {
@@ -111,7 +126,26 @@ public class MainUicontroller implements Initializable {
         }
 
     }
+    @FXML
+    void updtItem(ActionEvent event) {
+        Long ID;
+        double price;
 
+        ArrayList<TextField> txtList = new ArrayList<>();
+        txtList.add(UPITEM);
+        txtList.add(UPRICE);
+        for (TextField nodes : txtList)
+        {
+            if (nodes.getText().isEmpty()) {
+                LB3err.setText("PLEASE complete all the FIELDS!");
+            }
+            else
+            {
+
+            }
+        }
+
+    }
     @FXML
     void deleteItem(ActionEvent event) {
 

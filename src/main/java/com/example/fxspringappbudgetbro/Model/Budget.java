@@ -20,6 +20,10 @@ public class Budget {
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
 
+    public long getId() {
+        return id;
+    }
+
     private String item;
 
     private LocalDateTime datecreated;
