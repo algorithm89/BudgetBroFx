@@ -13,14 +13,13 @@ public class TableController {
 
 
     @FXML
-    private TableView<?> TBVIEW1;
+    private TableColumn<?, ?> ID;
 
     @FXML
-    private TableColumn<?, ?> IDCOL;
+    private TableColumn<?, ?> ITEM;
 
     @FXML
-    private TableColumn<?, ?> ITEMCOL;
-
+    private TableColumn<?, ?> PRICE;
 
 
     @FXML

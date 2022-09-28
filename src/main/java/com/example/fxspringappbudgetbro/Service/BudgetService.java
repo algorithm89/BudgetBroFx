@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Component
 @Data
-public class UserService {
+public class BudgetService {
 
     @Autowired
     ServiceUtil serviceUtil;

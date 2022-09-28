@@ -35,4 +35,28 @@ public class Budget {
                 ", price=" + price +
                 '}';
     }
+
+    public String getItem() {
+        return item;
+    }
+
+    public void setItem(String item) {
+        this.item = item;
+    }
+
+    public LocalDateTime getDatecreated() {
+        return datecreated;
+    }
+
+    public void setDatecreated(LocalDateTime datecreated) {
+        this.datecreated = datecreated;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }

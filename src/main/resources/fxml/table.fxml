@@ -2,16 +2,18 @@
 
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.AnchorPane?>
 
 
-<Pane fx:id="TBVIEW" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView fx:id="TBVIEW1" prefHeight="200.0" prefWidth="600.0">
+      <TableView fx:id="TBVIEW" prefHeight="251.0" prefWidth="380.0">
         <columns>
-          <TableColumn fx:id="IDCOL" prefWidth="300.0" text="C1" />
-          <TableColumn fx:id="ITEMCOL" minWidth="9.0" prefWidth="299.0" text="C2" />
+          <TableColumn fx:id="ID" prefWidth="100.0" text="ID" />
+          <TableColumn fx:id="ITEM" prefWidth="100.0" text="ITEM" />
+            <TableColumn fx:id="PRICE" prefWidth="100.0" text="PRICE" />
+            <TableColumn fx:id="PRICE1" prefWidth="100.0" text="DATE" />
         </columns>
       </TableView>
    </children>
-</Pane>
+</AnchorPane>
