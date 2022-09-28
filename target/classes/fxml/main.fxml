@@ -27,9 +27,26 @@
          </image>
       </ImageView>
       <TextField fx:id="ITEM" layoutX="50.0" layoutY="37.0" />
-      <Label fx:id="LB1" layoutX="50.0" layoutY="62.0" text="ItemName" />
+      <Label fx:id="LB1" layoutX="50.0" layoutY="62.0" text="ItemName">
+         <font>
+            <Font name="Bodoni MT Black" size="12.0" />
+         </font>
+      </Label>
       <Label fx:id="LB2" layoutX="50.0" layoutY="112.0" text="ItemPrice" />
       <Label fx:id="LB3err" layoutX="163.0" layoutY="176.0" prefHeight="17.0" prefWidth="244.0" textAlignment="CENTER">
+         <font>
+            <Font name="Bodoni MT Black" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="ADDBTN1" layoutX="220.0" layoutY="143.0" mnemonicParsing="false" onAction="#updtItem" prefHeight="25.0" prefWidth="91.0" text="UPDATE ITEM" />
+      <TextField fx:id="UPRICE" layoutX="220.0" layoutY="87.0" />
+      <TextField fx:id="UPITEM" layoutX="220.0" layoutY="37.0" />
+      <Label fx:id="LB11" layoutX="220.0" layoutY="62.0" text="ItemID">
+         <font>
+            <Font name="Bodoni MT Black" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="LB21" layoutX="220.0" layoutY="112.0" text="ItemPrice">
          <font>
             <Font name="Bodoni MT Black" size="12.0" />
          </font>

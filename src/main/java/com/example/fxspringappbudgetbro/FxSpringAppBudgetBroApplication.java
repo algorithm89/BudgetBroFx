@@ -33,8 +33,9 @@ public class FxSpringAppBudgetBroApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-
-        Parent root = FXMLLoader.load(getClass().getResource(("/fxml/main.fxml")));
+        FxWeaver fxWeaver = applicationContext.getBean(FxWeaver.class);
+        Parent root = fxWeaver.loadView(MainUicontroller.class);
+//      Parent root = FXMLLoader.load(getClass().getResource(("/fxml/main.fxml")));
         Scene scene =  new Scene(root);
         scene.getStylesheets().add("css/stylesheet.css");
         scene.setFill(Color.TRANSPARENT);

@@ -51,5 +51,6 @@
             <Font name="Bodoni MT Black" size="12.0" />
          </font>
       </Label>
+      <Button fx:id="CLEARFIELDS" layoutX="50.0" layoutY="191.0" mnemonicParsing="false" onAction="#addItem" prefHeight="25.0" prefWidth="84.0" text="CLEAR FIELDS" />
    </children>
 </Pane>
