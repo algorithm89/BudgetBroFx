@@ -145,10 +145,10 @@ public class MainUicontroller implements Initializable {
             if (nodes.getText().isEmpty()) {
                 LB3err.setText("PLEASE complete all the FIELDS!");
             }
-            else
+//            else if ()
             {
 
-                Budget ITEM = new Budget().g
+
 
             }
         }
