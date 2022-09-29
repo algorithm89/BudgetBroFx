@@ -42,6 +42,9 @@ public class MainUicontroller implements Initializable {
     private Button BT3;
 
     @FXML
+    private Button CLEARFIELDS;
+
+    @FXML
     private Button DELBTN;
 
     @FXML
@@ -63,13 +66,16 @@ public class MainUicontroller implements Initializable {
     private Label LB21;
 
     @FXML
+    private Label LB211;
+
+    @FXML
     private Label LB3err;
 
     @FXML
     private TextField PRICE;
 
     @FXML
-    private Button CLEARFIELDS;
+    private TextField UPDTNAME;
 
     @FXML
     private TextField UPITEM;
