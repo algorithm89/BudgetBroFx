@@ -42,7 +42,7 @@
       </Label>
       <Button fx:id="ADDBTN1" layoutX="220.0" layoutY="204.0" mnemonicParsing="false" onAction="#updtItem" prefHeight="25.0" prefWidth="91.0" text="UPDATE ITEM" />
       <TextField fx:id="UPRICE" layoutX="220.0" layoutY="153.0" />
-      <TextField fx:id="UPITEM" layoutX="220.0" layoutY="37.0" />
+      <TextField fx:id="UPIDITEM" layoutX="220.0" layoutY="37.0" />
       <Label fx:id="LB11" layoutX="220.0" layoutY="62.0" text="ItemID">
          <font>
             <Font name="Bodoni MT Black" size="12.0" />

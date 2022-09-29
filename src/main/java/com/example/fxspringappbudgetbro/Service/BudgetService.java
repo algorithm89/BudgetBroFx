@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @Component
 @Data
@@ -21,6 +24,15 @@ public class BudgetService {
 
     public Budget update(Budget entity) {
         return serviceUtil.getBudgetRepo().save(entity);
+    }
+
+
+    Optional<Budget> find(Long id)
+    {
+
+       return  serviceUtil.getBudgetRepo().findById(id);
+
+
     }
 
     public void delete(Budget entity) {

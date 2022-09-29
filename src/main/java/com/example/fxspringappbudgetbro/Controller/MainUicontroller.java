@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 @Component
@@ -78,7 +79,7 @@ public class MainUicontroller implements Initializable {
     private TextField UPDTNAME;
 
     @FXML
-    private TextField UPITEM;
+    private TextField UPIDITEM;
 
     @FXML
     private TextField UPRICE;
@@ -91,8 +92,6 @@ public class MainUicontroller implements Initializable {
         try {
             Stage stage = new Stage();
 //          Parent root = FXMLLoader.load(getClass().getResource("/fxml/table.fxml"));
-
-
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/table.fxml"));
             Scene scene = new Scene(root);
             scene.getStylesheets().add("css/stylesheet.css");
@@ -140,26 +139,30 @@ public class MainUicontroller implements Initializable {
     }
     @FXML
     void updtItem(ActionEvent event) {
-        Long ID;
+        long ID;
         double price;
+        String name;
+
 
         ArrayList<TextField> txtList = new ArrayList<>();
-        txtList.add(UPITEM);
+        txtList.add(UPIDITEM);
         txtList.add(UPRICE);
-        for (TextField nodes : txtList)
-        {
+        txtList.add(UPDTNAME);
+        for (TextField nodes : txtList) {
+
+            ID = Long.parseLong(UPDTNAME.getText());
+
+
             if (nodes.getText().isEmpty()) {
                 LB3err.setText("PLEASE complete all the FIELDS!");
             }
-//            else if ()
-            {
 
-
-
-            }
         }
 
     }
+
+
+
     @FXML
     void deleteItem(ActionEvent event) {
 
