@@ -3,6 +3,7 @@ package com.example.fxspringappbudgetbro.Controller;
 import com.example.fxspringappbudgetbro.Model.Budget;
 import com.example.fxspringappbudgetbro.Service.BudgetService;
 
+import com.example.fxspringappbudgetbro.Service.ServiceUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +32,7 @@ public class MainUicontroller implements Initializable {
 
     @Autowired
     private BudgetService budgetService;
+
 
 
     @FXML
@@ -104,10 +106,20 @@ public class MainUicontroller implements Initializable {
         }
 
     }
+
     @FXML
     void ClearField(ActionEvent event) {
-
+            clearFields();
     }
+
+    private void clearFields() {
+        ITEM.clear();
+        PRICE.clear();
+        UPIDITEM.clear();
+        UPRICE.clear();
+        UPDTNAME.clear();
+    }
+
     @FXML
     void addItem(ActionEvent event) {
         String item;
@@ -118,15 +130,12 @@ public class MainUicontroller implements Initializable {
         txtList.add(PRICE);
 
 
-        for (TextField nodes : txtList)
-        {
+        for (TextField nodes : txtList) {
             if (nodes.getText().isEmpty()) {
                 LB3err.setText("PLEASE complete all the FIELDS!");
-            }
-            else
-            {
-                item=ITEM.getText();
-                price= Double.parseDouble(PRICE.getText());
+            } else {
+                item = ITEM.getText();
+                price = Double.parseDouble(PRICE.getText());
                 Budget budget = new Budget();
                 budget.setItem(item);
                 budget.setPrice(price);
@@ -137,9 +146,17 @@ public class MainUicontroller implements Initializable {
         }
 
     }
+
+
+//    private boolean validateId(Long ID) {
+//
+//
+//    }
+
+
     @FXML
     void updtItem(ActionEvent event) {
-        long ID;
+        Long ID = null;
         double price;
         String name;
 
@@ -150,27 +167,58 @@ public class MainUicontroller implements Initializable {
         txtList.add(UPDTNAME);
         for (TextField nodes : txtList) {
 
-            ID = Long.parseLong(UPDTNAME.getText());
-
-
             if (nodes.getText().isEmpty()) {
                 LB3err.setText("PLEASE complete all the FIELDS!");
+            } else {
+                Optional<Budget> budget = budgetService.find(Long.parseLong(UPIDITEM.getText()));
+                if (budget.isPresent()) {
+
+                    ID = Long.valueOf(UPIDITEM.getText());
+                    price = Double.parseDouble(UPRICE.getText());
+                    name = UPDTNAME.getText();
+                    Budget item = new Budget();
+                    item.setItem(String.valueOf(price));
+                    item.setItem(name);
+                    item.setDatecreated(LocalDateTime.now());
+                    budgetService.save(item);
+
+                    LB3err.setText("ID present! " + ID + " Initiating Update");
+
+                } else {
+                    LB3err.setText("No Such ID " + ID);
+                }
+
             }
 
         }
+    }
 
+        @FXML
+        void deleteItem (ActionEvent event){
+
+            Long ID;
+            ID = Long.valueOf(DELITEMITD.getText());
+
+
+            Optional<Budget> budget = budgetService.find(Long.parseLong(DELITEMITD.getText()));
+            if (budget.isPresent())
+            {
+                Budget item = new Budget();
+
+                item.getId(ID);
+
+                budgetService.delete(item);
+                LB3err.setText("ITEM DELETED!");
+
+            } else { LB3err.setText("NO SUCH ID!!!");}
+
+        }
+
+
+        @Override
+        public void initialize (URL url, ResourceBundle resourceBundle){
+
+        }
     }
 
 
-
-    @FXML
-    void deleteItem(ActionEvent event) {
-
-    }
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
-}

@@ -27,20 +27,17 @@ public class BudgetService {
     }
 
 
-    Optional<Budget> find(Long id)
-    {
-
-       return  serviceUtil.getBudgetRepo().findById(id);
-
-
+    public Optional<Budget> find(Long id) {
+        return serviceUtil.getBudgetRepo().findById(id);
     }
+
 
     public void delete(Budget entity) {
          serviceUtil.getBudgetRepo().delete(entity);
     }
 
 
-    public void delete(Long id) {
-        serviceUtil.getBudgetRepo().deleteById(id);
+    public void delete(List<Budget>  budgets ) {
+        serviceUtil.getBudgetRepo().deleteById(budgets);
     }
 }
