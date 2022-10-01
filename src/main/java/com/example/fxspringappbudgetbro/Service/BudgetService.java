@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -37,7 +36,7 @@ public class BudgetService {
     }
 
 
-    public void delete(List<Budget>  budgets ) {
-        serviceUtil.getBudgetRepo().deleteById(budgets);
+    public void deletebyId(Budget ID) {
+        serviceUtil.getBudgetRepo().deleteById();
     }
 }

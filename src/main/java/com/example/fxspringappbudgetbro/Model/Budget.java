@@ -20,8 +20,16 @@ public class Budget {
     @Column(name = "id", updatable = false, nullable = false)
     private long id;
 
+    public long getId(Long ID) {
+        return id;
+    }
+
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     private String item;

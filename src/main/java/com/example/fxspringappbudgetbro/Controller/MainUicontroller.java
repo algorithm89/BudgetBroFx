@@ -206,8 +206,7 @@ public class MainUicontroller implements Initializable {
                 Budget item = new Budget();
 
                 item.getId(ID);
-
-                budgetService.delete(item);
+                budgetService.deletebyId(item);
                 LB3err.setText("ITEM DELETED!");
 
             } else { LB3err.setText("NO SUCH ID!!!");}
